@@ -8,8 +8,8 @@ array_push($inputArray, fgets($inputFile));
 array_push($inputArray, fgets($inputFile));
 array_push($inputArray, fgets($inputFile));
 
-$previousDepth = $inputArray[0] + $inputArray[2] + $inputArray[3];
-for ($i = 3; $i < filesize($fileName); $i++) {
+$previousDepth = $inputArray[0] + $inputArray[1] + $inputArray[2];
+for ($i = 3; $i < count(file($fileName)) + 3; $i++) {
     array_push($inputArray, fgets($inputFile));
     $currentDepth = $inputArray[$i - 2] + $inputArray[$i - 1] + $inputArray[$i];
     if ($previousDepth < $currentDepth)
